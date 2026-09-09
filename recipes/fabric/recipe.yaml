@@ -1,0 +1,10 @@
+name: fabric-warehouse-supplier
+status: configuration_reviewed_not_live_vendor_validated
+interface: Microsoft Fabric Warehouse SQL endpoint
+direction: read
+auth: [entra_service_principal]
+fullLoad: ordered SQL snapshot with keyset pagination
+delta: modified_at plus supplier_id tie-breaker with overlap
+deletions: explicit tombstone table only
+mapping: {supplier_id: local_id, supplier_name: name, country_code: country, tax_id: tax_id, modified_at: observed_at}
+limitations: [Fabric capacity and tenant permissions required, no live validation, no write-back]

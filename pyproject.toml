@@ -1,0 +1,15 @@
+[build-system]
+requires = ["hatchling==1.27.0"]
+build-backend = "hatchling.build"
+[project]
+name = "recordlane-connector-kit"
+version = "0.1.0a1"
+description = "Recordlane connector authoring and conformance kit"
+readme = "README.md"
+requires-python = ">=3.11"
+license = {text = "Apache-2.0"}
+dependencies = ["pydantic==2.13.5", "PyYAML==6.0.3", "jsonschema==4.25.1"]
+[project.optional-dependencies]
+test = ["pytest==8.4.2"]
+[tool.hatch.build.targets.wheel]
+packages = ["src/recordlane_connector_kit"]

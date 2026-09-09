@@ -1,0 +1,10 @@
+name: databricks-sql-supplier
+status: configuration_reviewed_not_live_vendor_validated
+interface: Databricks SQL Statement Execution API
+direction: read
+auth: [oauth_machine_to_machine, personal_access_token_not_recommended]
+fullLoad: ordered SQL query with warehouse statement and chunk checkpoints
+delta: modified_at plus immutable supplier_id tie-breaker with overlap
+deletions: explicit is_deleted column only
+mapping: {supplier_id: local_id, name: name, country_code: country, tax_id: tax_id, modified_at: observed_at}
+limitations: [SQL warehouse required, source table snapshot semantics are owner responsibility, no live validation]

@@ -1,0 +1,10 @@
+name: salesforce-account
+status: configuration_reviewed_not_live_vendor_validated
+interface: Salesforce REST query and Bulk API 2.0
+direction: read
+auth: [oauth2_jwt_bearer, oauth2_client_credentials_when_org_supports]
+fullLoad: Bulk query snapshot with job and locator checkpoint
+delta: SystemModstamp greater-than with Id tie-breaker and bounded overlap/deduplication
+deletions: getDeleted or CDC tombstones only
+mapping: {Id: local_id, Name: name, BillingCountryCode: country, Tax_ID__c: tax_id, SystemModstamp: observed_at}
+limitations: [custom field must be mapped, API limits are tenant-specific, credentials unavailable in this release]

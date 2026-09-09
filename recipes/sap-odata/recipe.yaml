@@ -1,0 +1,10 @@
+name: sap-odata-business-partner
+status: contract_tested_not_live_vendor_validated
+interface: SAP OData v2/v4 documented API
+direction: read
+auth: [oauth2_client_credentials]
+fullLoad: server pagination with immutable extraction boundary where exposed
+delta: delta token when the selected SAP API documents support; otherwise timestamp plus stable key overlap
+deletions: only explicit tombstones or documented delta deletion markers
+mapping: {BusinessPartner: local_id, BusinessPartnerFullName: name, TaxNumber1: tax_id, Country: country}
+limitations: [customer endpoint and entitlement vary, no write-back, credentials unavailable in this release]

@@ -1,0 +1,10 @@
+name: dataverse-account
+status: configuration_reviewed_not_live_vendor_validated
+interface: Microsoft Dataverse Web API OData v4
+direction: read
+auth: [oauth2_client_credentials]
+fullLoad: '@odata.nextLink pagination with snapshot caveats'
+delta: '@odata.deltaLink when change tracking is enabled'
+deletions: removed entries in a complete delta feed only
+mapping: {accountid: local_id, name: name, address1_country: country, cr_taxid: tax_id, modifiedon: observed_at}
+limitations: [change tracking must be enabled, polymorphic lookups require explicit mapping, credentials unavailable]
