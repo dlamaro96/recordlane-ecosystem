@@ -3,7 +3,7 @@ requires = ["hatchling==1.27.0"]
 build-backend = "hatchling.build"
 [project]
 name = "recordlane-connector-kit"
-version = "0.1.0a1"
+version = "0.1.0a2"
 description = "Recordlane connector authoring and conformance kit"
 readme = "README.md"
 requires-python = ">=3.11"
